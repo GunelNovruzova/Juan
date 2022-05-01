@@ -1,0 +1,48 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<!-- On rows -->
+@*<tr class="bg-primary">Logo</tr>
+<tr class="bg-success">Greeting</tr>
+<tr class="bg-warning">Email</tr>
+<tr class="bg-danger">Phone</tr>
+<tr class="bg-info">Address</tr>
+<tr class="bg-primary">WorkHours</tr>*@
+
+
+<!-- On cells (`td` or `th`) -->
+@*<tr>
+    <td class="bg-primary">@Model.Logo</td>
+    <td class="bg-success">@Model.Greeting</td>
+    <td class="bg-warning">@Model.Email</td>
+    <td class="bg-danger">@Model.Phone</td>
+    <td class="bg-info">@Model.Address</td>
+    <td class="bg-primary">@Model.WorkHours</td>
+</tr>*@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Logo</th>
+            <th scope="col">Greeting</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">WorkHours</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td><img src="~/assets/img/logo/@Model.Logo" alt="Alternate Text" /></td>
+            <td>@Model.Greeting</td>
+            <td>@Model.Email</td>
+            <td>@Model.Phone</td>
+            <td>@Model.Address</td>
+            <td>@Model.WorkHours</td>
+        </tr>
+    </tbody>
+</table>
