@@ -12,6 +12,6 @@ namespace P224Juan.Models
         public Nullable<int> TagId { get; set; }
         public Blog Blog { get; set; }
         public Tag Tag { get; set; }
-        public IEnumerable<BlogtoCategory> BlogtoCategories { get; set; }
     }
 }
+ 

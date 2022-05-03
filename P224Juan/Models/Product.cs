@@ -26,5 +26,8 @@ namespace P224Juan.Models
         public IEnumerable<ProductSize> ProductSizes { get; set; }
         [NotMapped]
         public IFormFile MainImageFile { get; set; }
+        [NotMapped]
+        public IFormFile[] ProductImagesFile { get; set; }
     }
 }
+ 

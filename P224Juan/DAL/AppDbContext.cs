@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using P224Juan.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace P224Juan.DAL
 {
-    public class AppDbContext: DbContext
+    public class AppDbContext: IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Setting> Settings { get; set; }
@@ -26,6 +27,7 @@ namespace P224Juan.DAL
         public DbSet<BlogTag> BlogTags { get; set; }
         public DbSet<BlogtoCategory> BlogtoCategories { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
 
     }
 }
