@@ -23,7 +23,7 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Size> sizes = await _context.Sizes
-                .Include(t => t.ProductSizes)
+                
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();
@@ -139,7 +139,7 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Size> sizes = await _context.Sizes
-                .Include(t => t.ProductSizes)
+               
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();
@@ -166,7 +166,7 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Size> sizes = await _context.Sizes
-                .Include(t => t.ProductSizes)
+                
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();

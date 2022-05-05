@@ -8,6 +8,6 @@ namespace P224Juan.Models
     public class Size:BaseEntity
     {
         public string Name { get; set; }
-        public IEnumerable<ProductSize> ProductSizes { get; set; }
+        public IEnumerable<ProductColorSize> ProductColorSizes { get; set; }
     }
 }

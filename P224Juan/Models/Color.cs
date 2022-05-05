@@ -9,6 +9,6 @@ namespace P224Juan.Models
     {
         [StringLength(255)]
         public string Name { get; set; }
-        public IEnumerable<ProductColor> ProductColors { get; set; }
+        public IEnumerable<ProductColorSize> ProductColorSizes { get; set; }
     }
-}
+} 

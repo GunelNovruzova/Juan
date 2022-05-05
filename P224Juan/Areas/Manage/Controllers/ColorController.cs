@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P224Juan.DAL;
 using P224Juan.Extensions;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 namespace P224Juan.Areas.Manage.Controllers
 {
     [Area("Manage")]
+   
     public class ColorController : Controller
     {
         private readonly AppDbContext _context;
@@ -24,7 +26,7 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Color> colors = await _context.Colors
-                .Include(t=> t.ProductColors)
+               
                
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
@@ -140,7 +142,7 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Color> colors = await _context.Colors
-                .Include(t => t.ProductColors)
+               
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();
@@ -167,7 +169,7 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Color> colors = await _context.Colors
-                .Include(t => t.ProductColors)
+              
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();

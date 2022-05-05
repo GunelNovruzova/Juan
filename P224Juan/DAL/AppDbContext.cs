@@ -18,16 +18,14 @@ namespace P224Juan.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductColor> ProductColors { get; set; }
-        public DbSet<ProductSize> ProductSizes { get; set; }
+        public DbSet<ProductColorSize> ProductColorSizes { get; set; }
+        public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Blog> Blogs { get; set; }
-        public DbSet<BlogCategory> BlogCategories { get; set; }
-        public DbSet<BlogTag> BlogTags { get; set; }
-        public DbSet<BlogtoCategory> BlogtoCategories { get; set; }
-        public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
+
 
     }
 }

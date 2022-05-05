@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace P224Juan.Models
 {
-    public class ProductSize:BaseEntity
+    public class Basket:BaseEntity
     {
-        public int SizeId { get; set; }
         public Nullable<int> ProductId { get; set; }
-        public Size Size { get; set; }
         public Product Product { get; set; }
+        public int Count { get; set; }
+
     }
 }

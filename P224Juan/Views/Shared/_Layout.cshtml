@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@*@using Microsoft.AspNetCore.Identity;
+@inject UserManager<AppUser> userManager;*@
+@{ 
+//AppUser appUser = null;
+//if (User.Identity.IsAuthenticated)
+//{
+//    appUser = userManager.Users.FirstOrDefault(u => u.UserName == User.Identity.Name && !u.IsAdmin);
+//}
+}
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <!-- Mirrored from demo.hasthemes.com/juan-preview-v1/juan/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Mar 2021 22:36:22 GMT -->
@@ -209,15 +218,15 @@
                                                 <i class="ion-ios-gear-outline"></i>
                                             </a>
                                             <ul class="dropdown-list">
-                                                @if (User.Identity.IsAuthenticated)
+                                                @if (User.Identity.IsAuthenticated) 
                                                 {
                                                     <li><a href="my-account.html">@User.Identity.Name</a></li>
                                                     <li><a asp-action="Logout" asp-controller="Account">Sign Out</a></li>
                                                 }
                                                 else
                                                 {
-                                                    <li><a asp-controller="Account" asp-action="Login">login</a></li>
-                                                    <li><a asp-controller="Account" asp-action="Register">register</a></li>
+                                                    <li><a  asp-action="Login" asp-controller="Account">login</a></li>
+                                                    <li><a  asp-action="Register" asp-controller="Account">register</a></li>
                                                 }
 
                                             </ul>
@@ -456,7 +465,7 @@
                     </div>
 
                     <div class="minicart-button">
-                        <a href="cart.html"><i class="fa fa-shopping-cart"></i> view cart</a>
+                        <a asp-action="Index" asp-controller="Basket"><i class="fa fa-shopping-cart"></i> view cart</a>
                         <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
                     </div>
                 </div>

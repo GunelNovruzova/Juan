@@ -19,8 +19,15 @@ using P224Juan.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\User\Desktop\JuanPro\P224Juan\Areas\Manage\Views\_ViewImports.cshtml"
+using P224Juan.ViewModels.Account;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0241ba6b2643e3440c606ef94175369ec33d31d1", @"/Areas/Manage/Views/Shared/_BrandIndexPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5158e7210e3db7155b4023fbbb76e8296f773a93", @"/Areas/Manage/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a55b287334d54ad1176dc69ccd6aea4111b900d7", @"/Areas/Manage/Views/_ViewImports.cshtml")]
     public class Areas_Manage_Views_Shared__BrandIndexPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Brand>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-warning"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -61,7 +68,7 @@ using P224Juan.Models;
 #line hidden
 #nullable disable
             WriteLiteral("            <tr>\r\n              \r\n                <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0241ba6b2643e3440c606ef94175369ec33d31d14442", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0241ba6b2643e3440c606ef94175369ec33d31d14636", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -103,7 +110,7 @@ WriteAttributeValue("", 495, brand.IsDeleted ? "red":"green", 495, 34, false);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                <td>\r\n                   \r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0241ba6b2643e3440c606ef94175369ec33d31d16835", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0241ba6b2643e3440c606ef94175369ec33d31d17029", async() => {
                 WriteLiteral("Update");
             }
             );
@@ -157,7 +164,7 @@ WriteAttributeValue("", 495, brand.IsDeleted ? "red":"green", 495, 34, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0241ba6b2643e3440c606ef94175369ec33d31d110756", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0241ba6b2643e3440c606ef94175369ec33d31d110950", async() => {
 #nullable restore
 #line 25 "C:\Users\User\Desktop\JuanPro\P224Juan\Areas\Manage\Views\Shared\_BrandIndexPartial.cshtml"
                                                                                                                                                                                                                                                                                        Write(brand.IsDeleted ? "Restore":"Delete");

@@ -22,12 +22,21 @@ namespace P224Juan.Models
         public bool IsAvailable { get; set; }
         public Nullable<int> CategoryId { get; set; }
         public Category Category { get; set; }
-        public IEnumerable<ProductColor> ProductColors { get; set; }
-        public IEnumerable<ProductSize> ProductSizes { get; set; }
+        public IEnumerable<ProductTag> ProductTags { get; set; }
+        public IEnumerable<Review> Reviews { get; set; }
+        public IEnumerable<ProductColorSize> ProductColorSizes { get; set; }
+        public IEnumerable<ProductImage> ProductImages { get; set; }
         [NotMapped]
         public IFormFile MainImageFile { get; set; }
         [NotMapped]
         public IFormFile[] ProductImagesFile { get; set; }
+
+        [NotMapped]
+        public List<int> TagIds { get; set; } = new List<int>();
+        [NotMapped]
+        public List<int> ColorIds { get; set; } = new List<int>();
+        [NotMapped]
+        public List<int> SizeIds { get; set; } = new List<int>();
     }
 }
  

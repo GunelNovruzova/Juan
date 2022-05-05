@@ -7,6 +7,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20220501151650_BlogAndTagConnectionUpdated.cs" />
     <Compile Remove="Migrations\20220501151650_BlogAndTagConnectionUpdated.Designer.cs" />
+    <Compile Remove="Migrations\20220504121650_ProductColorSizeColumn.cs" />
+    <Compile Remove="Migrations\20220504121650_ProductColorSizeColumn.Designer.cs" />
+    <Compile Remove="Migrations\20220504121911_UpdatedTableProductSize.cs" />
+    <Compile Remove="Migrations\20220504121911_UpdatedTableProductSize.Designer.cs" />
+    <Compile Remove="Migrations\20220504122140_UpdatedProColorSize.cs" />
+    <Compile Remove="Migrations\20220504122140_UpdatedProColorSize.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

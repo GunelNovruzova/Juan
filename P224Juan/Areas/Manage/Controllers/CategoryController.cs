@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P224Juan.DAL;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 namespace P224Juan.Areas.Manage.Controllers
 {
     [Area("manage")]
+  
 
     public class CategoryController : Controller
     {

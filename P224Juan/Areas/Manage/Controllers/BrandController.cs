@@ -9,10 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using P224Juan.Helper;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace P224Juan.Areas.Manage.Controllers
 {
     [Area("manage")]
+ 
     public class BrandController : Controller
     {
         private readonly AppDbContext _context;

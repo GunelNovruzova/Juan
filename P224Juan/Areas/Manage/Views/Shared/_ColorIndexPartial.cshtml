@@ -8,7 +8,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Color Count</th>
+            <
             <th scope="col">Status</th>
             <th scope="col">Setting</th>
         </tr>
@@ -20,7 +20,7 @@
             <tr>
                 <th scope="row">@count</th>
                 <td>@color.Name</td>
-                <td>@color.ProductColors.Count()</td>
+                
                 <td style="color:@(color.IsDeleted ? "red":"green")">@(color.IsDeleted ? "DeActive":"Active")</td>
                 <td>
                     <a class="btn btn-primary" asp-action="Detail" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-route-id="@color.Id">Detail</a>

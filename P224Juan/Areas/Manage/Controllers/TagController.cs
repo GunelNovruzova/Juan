@@ -25,7 +25,6 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Tag> tags = await _context.Tags
-                .Include(t => t.BlogTags)
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();
@@ -35,7 +34,7 @@ namespace P224Juan.Areas.Manage.Controllers
 
             return View(tags.Skip((page - 1) * 5).Take(5));
         }
-        public IActionResult Create()
+        public IActionResult Create() 
         {
             return View();
         }
@@ -140,7 +139,6 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Tag> tags = await _context.Tags
-                .Include(t => t.BlogTags)
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();
@@ -168,7 +166,6 @@ namespace P224Juan.Areas.Manage.Controllers
             ViewBag.Status = status;
 
             IEnumerable<Tag> tags = await _context.Tags
-                .Include(t => t.BlogTags)
                 .Where(t => status != null ? t.IsDeleted == status : true)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();

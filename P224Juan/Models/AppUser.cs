@@ -11,5 +11,6 @@ namespace P224Juan.Models
     {
         [StringLength(255)]
         public string FullName { get; set; }
+        public bool IsAdmin { get; set; }
     }
 }

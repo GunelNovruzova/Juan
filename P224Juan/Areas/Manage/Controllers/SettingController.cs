@@ -9,10 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using P224Juan.Helper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace P224Juan.Areas.Manage.Controllers
 {
     [Area("manage")]
+  
     public class SettingController : Controller
     {
         private readonly AppDbContext _context;

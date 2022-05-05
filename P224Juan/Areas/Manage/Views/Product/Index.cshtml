@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col-lg-2 h3 mb-4 text-gray-800">
-        <h1>Brands</h1>
+        <h1>Products</h1>
     </div>
     <div class="col-lg-8 h3 mb-4 text-gray-800">
         <form>
@@ -47,15 +47,10 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Image</th>
+                   
                     <th scope="col">Name</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Count</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Discount Price</th>
-                    
-                    <th scope="col">Category Name</th>
-                    
+                     <th scope="col">Price</th>
                     <th scope="col">Status</th> 
                     <th scope="col">Setting</th>
                 </tr>
@@ -67,17 +62,9 @@
                
                     <tr>
                         <th scope="row">@count</th>
-                        <td>
-                            <img style="width:50%" src="~/assets/img/product/@product.MainImage" alt="Alternate Text" />
-                        </td>
                         <td>@product.Name</td>
                         <td>@product.Description</td>
-                        <td>@product.Count</td>
                         <td>@product.Price</td>
-                        <td>@product.DiscountPrice</td>
-                        
-                        <td>@product.Category.Name</td>
-            
                         <td style="color:@(product.IsDeleted ? "red":"green")">@(product.IsDeleted ? "DeActive":"Active")</td>
                         <td>
                             <a class="btn btn-primary" asp-action="Detail" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-route-id="@product.Id">Detail</a>

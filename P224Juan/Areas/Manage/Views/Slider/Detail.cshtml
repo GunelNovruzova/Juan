@@ -1,0 +1,29 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Subtitle</th>
+            <th scope="col">Description</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td><img style="width:50%" src="~/assets/img/slider/@Model.Image" alt="Alternate Text" /></td>
+            <td>@Model.Title</td>
+            <td>@Model.SubTitle</td>
+            <td>@Model.Description</td>
+          
+        </tr>
+    </tbody>
+</table>
+

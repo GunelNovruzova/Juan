@@ -16,13 +16,11 @@ namespace P224Juan.Models
         public string Title { get; set; }
         [StringLength(2000)]
         public string Description { get; set; }
-        public int PublisherId { get; set; }
-        public Publisher Publisher { get; set; }
+        public string PublisherName { get; set; }
 
         [NotMapped]
         public IFormFile ImageFile { get; set; }
        
-        public IEnumerable<BlogTag> BlogTags { get; set; }
-        public IEnumerable<BlogtoCategory> BlogtoCategories { get; set; }
+      
     }
 }

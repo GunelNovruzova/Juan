@@ -494,3 +494,14 @@ C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Share
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationFormScriptPartial.cshtml.g.cs
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Login.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Index.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Detail.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Update.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Blog\Index.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_BlogIndexPartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Blog\Create.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Blog\Update.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Detail.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Create.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs

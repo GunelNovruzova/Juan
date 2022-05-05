@@ -173,6 +173,9 @@ namespace P224Juan.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -243,8 +246,8 @@ namespace P224Juan.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("PublisherId")
-                        .HasColumnType("int");
+                    b.Property<string>("PublisherName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(1000)")
@@ -255,80 +258,7 @@ namespace P224Juan.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PublisherId");
-
                     b.ToTable("Blogs");
-                });
-
-            modelBuilder.Entity("P224Juan.Models.BlogCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BlogCategories");
-                });
-
-            modelBuilder.Entity("P224Juan.Models.BlogTag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("BlogId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TagId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BlogId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("BlogTags");
-                });
-
-            modelBuilder.Entity("P224Juan.Models.BlogtoCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("BlogCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BlogId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BlogCategoryId");
-
-                    b.HasIndex("BlogId");
-
-                    b.ToTable("BlogtoCategories");
                 });
 
             modelBuilder.Entity("P224Juan.Models.Brand", b =>
@@ -468,9 +398,9 @@ namespace P224Juan.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("P224Juan.Models.ProductColor", b =>
+            modelBuilder.Entity("P224Juan.Models.ProductColorSize", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -478,20 +408,14 @@ namespace P224Juan.Migrations
                     b.Property<int?>("ColorId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<int?>("SizeId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -499,10 +423,12 @@ namespace P224Juan.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductColors");
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("ProductColorSizes");
                 });
 
-            modelBuilder.Entity("P224Juan.Models.ProductSize", b =>
+            modelBuilder.Entity("P224Juan.Models.ProductImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -515,13 +441,13 @@ namespace P224Juan.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SizeId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -531,12 +457,32 @@ namespace P224Juan.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.HasIndex("SizeId");
-
-                    b.ToTable("ProductSizes");
+                    b.ToTable("ProductImages");
                 });
 
-            modelBuilder.Entity("P224Juan.Models.Publisher", b =>
+            modelBuilder.Entity("P224Juan.Models.ProductTag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TagId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("ProductTags");
+                });
+
+            modelBuilder.Entity("P224Juan.Models.Review", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -549,27 +495,32 @@ namespace P224Juan.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("PublisherImage")
-                        .HasColumnType("nvarchar(1000)")
-                        .HasMaxLength(1000);
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PublisherName")
-                        .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PublisherPosition")
-                        .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Star")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Publishers");
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Review");
                 });
 
             modelBuilder.Entity("P224Juan.Models.ServiceOffer", b =>
@@ -807,37 +758,6 @@ namespace P224Juan.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("P224Juan.Models.Blog", b =>
-                {
-                    b.HasOne("P224Juan.Models.Publisher", "Publisher")
-                        .WithMany("Blogs")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("P224Juan.Models.BlogTag", b =>
-                {
-                    b.HasOne("P224Juan.Models.Blog", "Blog")
-                        .WithMany("BlogTags")
-                        .HasForeignKey("BlogId");
-
-                    b.HasOne("P224Juan.Models.Tag", "Tag")
-                        .WithMany("BlogTags")
-                        .HasForeignKey("TagId");
-                });
-
-            modelBuilder.Entity("P224Juan.Models.BlogtoCategory", b =>
-                {
-                    b.HasOne("P224Juan.Models.BlogCategory", "BlogCategory")
-                        .WithMany("BlogtoCategories")
-                        .HasForeignKey("BlogCategoryId");
-
-                    b.HasOne("P224Juan.Models.Blog", "Blog")
-                        .WithMany("BlogtoCategories")
-                        .HasForeignKey("BlogId");
-                });
-
             modelBuilder.Entity("P224Juan.Models.Product", b =>
                 {
                     b.HasOne("P224Juan.Models.Category", "Category")
@@ -845,26 +765,46 @@ namespace P224Juan.Migrations
                         .HasForeignKey("CategoryId");
                 });
 
-            modelBuilder.Entity("P224Juan.Models.ProductColor", b =>
+            modelBuilder.Entity("P224Juan.Models.ProductColorSize", b =>
                 {
                     b.HasOne("P224Juan.Models.Color", "Color")
-                        .WithMany("ProductColors")
+                        .WithMany("ProductColorSizes")
                         .HasForeignKey("ColorId");
 
                     b.HasOne("P224Juan.Models.Product", "Product")
-                        .WithMany("ProductColors")
-                        .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("P224Juan.Models.ProductSize", b =>
-                {
-                    b.HasOne("P224Juan.Models.Product", "Product")
-                        .WithMany("ProductSizes")
+                        .WithMany("ProductColorSizes")
                         .HasForeignKey("ProductId");
 
                     b.HasOne("P224Juan.Models.Size", "Size")
-                        .WithMany("ProductSizes")
-                        .HasForeignKey("SizeId")
+                        .WithMany("ProductColorSizes")
+                        .HasForeignKey("SizeId");
+                });
+
+            modelBuilder.Entity("P224Juan.Models.ProductImage", b =>
+                {
+                    b.HasOne("P224Juan.Models.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("P224Juan.Models.ProductTag", b =>
+                {
+                    b.HasOne("P224Juan.Models.Product", "Product")
+                        .WithMany("ProductTags")
+                        .HasForeignKey("ProductId");
+
+                    b.HasOne("P224Juan.Models.Tag", "Tag")
+                        .WithMany()
+                        .HasForeignKey("TagId");
+                });
+
+            modelBuilder.Entity("P224Juan.Models.Review", b =>
+                {
+                    b.HasOne("P224Juan.Models.Product", "Product")
+                        .WithMany("Reviews")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
