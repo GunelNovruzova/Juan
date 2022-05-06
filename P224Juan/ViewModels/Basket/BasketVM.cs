@@ -13,5 +13,7 @@ namespace P224Juan.ViewModels.Basket
         public double Price { get; set; }
         public double DiscountPrice { get; set; }
         public string Image { get; set; }
+        public string Color { get; set; }
+        public string Size { get; set; }
     }
 }

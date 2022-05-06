@@ -20,12 +20,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Price"></label>
-                <input class="form-control" asp-for="Price" placeholder="Enter Price">
+                <input  type="number"  class="form-control" asp-for="Price" placeholder="Enter Price">
                 <span class="text-danger" asp-validation-for="Price"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DiscountPrice"></label>
-                <input class="form-control" asp-for="DiscountPrice" placeholder="Enter DiscountPrice">
+                <input  type="number"  class="form-control" asp-for="DiscountPrice" placeholder="Enter DiscountPrice">
                 <span class="text-danger" asp-validation-for="DiscountPrice"></span>
             </div>
             <div class="form-group">
@@ -33,13 +33,15 @@
                 <textarea class="form-control" asp-for="Description" placeholder="Enter Description"></textarea>
                 <span class="text-danger" asp-validation-for="Description"></span>
             </div>
-
-
             <div class="form-group">
-                <label asp-for="Count"></label>
-                <input class="form-control" asp-for="Count" placeholder="Enter Count">
-                <span class="text-danger" asp-validation-for="Count"></span>
+                <label asp-for="ExTax"></label>
+                <input type="number" class="form-control" asp-for="ExTax" placeholder="Enter ExTax"></input>
+                <span class="text-danger" asp-validation-for="ExTax"></span>
             </div>
+
+
+
+
             <div class="form-group">
                 <label asp-for="MainImageFile"></label>
                 <input class="form-control" accept="image/jpeg" asp-for="MainImageFile" placeholder="Enter MainImage">
@@ -60,27 +62,22 @@
                 </select>
                 <span class="text-danger" asp-validation-for="TagIds"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ColorIds"></label>
-                <select class="form-control" asp-for="ColorIds" asp-items="@new SelectList(ViewBag.Colors, nameof(Color.Id), nameof(Color.Name))">
-                    <option value="" selected>Choose...</option>
-                </select>
-                <span class="text-danger" asp-validation-for="TagIds"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SizeIds"></label>
-                <select class="form-control" asp-for="SizeIds" asp-items="@new SelectList(ViewBag.Sizes, nameof(Size.Id), nameof(Size.Name))">
-                    <option value="" selected>Choose...</option>
-                </select>
-                <span class="text-danger" asp-validation-for="TagIds"></span>
-            </div>
-           
+
+
             <div class="form-group">
                 <label asp-for="CategoryId"></label>
                 <select class="form-control" asp-for="CategoryId" asp-items="@new SelectList(ViewBag.Categories, nameof(Category.Id), nameof(Category.Name))">
                     <option value="" selected>Choose...</option>
                 </select>
                 <span class="text-danger" asp-validation-for="CategoryId"></span>
+            </div>
+            <div class="inputContaine">
+                <div class="inputContaineForadd">
+                    @await Html.PartialAsync("_ProductColorSizePartial")
+                </div>
+                <div class="addinputbutton">
+                    <a asp-action="GetFormColoRSizeCount" class="btn btn-primary addbtn">Add</a>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
@@ -94,5 +91,15 @@
 
 @section Script{
     <partial name="_ValidationFormScriptPartial">
+        <script>
+            $(document).ready(function () {
+                $(document).on("click", ".addbtn", function (e) {
+                    e.preventDefault();
+                    fetch($(this).attr("href")).then(response => response.text()).then(data => $(".inputContaineForadd").append(data));
+
+                    //$(".inputContaineForadd").append(inputs);
+                })
+            })
+        </script>
 }
 

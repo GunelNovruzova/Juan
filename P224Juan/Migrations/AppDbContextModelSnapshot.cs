@@ -371,6 +371,9 @@ namespace P224Juan.Migrations
                     b.Property<double>("DiscountPrice")
                         .HasColumnType("float");
 
+                    b.Property<double>("ExTax")
+                        .HasColumnType("float");
+
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
 

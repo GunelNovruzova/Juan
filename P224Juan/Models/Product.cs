@@ -14,6 +14,7 @@ namespace P224Juan.Models
         public string Name { get; set; }
         public double Price { get; set; }
         public double DiscountPrice { get; set; }
+        public double ExTax { get; set; }
         public int Count { get; set; }
         [StringLength(255)]
         public string Description { get; set; }
@@ -24,8 +25,10 @@ namespace P224Juan.Models
         public Category Category { get; set; }
         public IEnumerable<ProductTag> ProductTags { get; set; }
         public IEnumerable<Review> Reviews { get; set; }
-        public IEnumerable<ProductColorSize> ProductColorSizes { get; set; }
+        public List<ProductColorSize> ProductColorSizes { get; set;}
         public IEnumerable<ProductImage> ProductImages { get; set; }
+        [NotMapped]
+        public List<int> Counts { get; set; } = new List<int>();
         [NotMapped]
         public IFormFile MainImageFile { get; set; }
         [NotMapped]

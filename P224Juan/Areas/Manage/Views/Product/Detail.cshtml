@@ -24,6 +24,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">DiscountPrice</th>
+                    <th scope="col">ExTax</th>
                     <th scope="col">Tags</th>
                     <th scope="col">Color</th>
                     <th scope="col">Size</th>
@@ -33,14 +34,15 @@
             </thead>
             <tbody>
                 <tr>
-                    
-                   
-                  
+
+
+
                     <th scope="row">1</th>
                     <td><img src="~/assets/img/product/@Model.MainImage" /></td>
                     <td>@Model.Name</td>
                     <td>@Model.Price</td>
                     <td>@Model.DiscountPrice</td>
+                    <td>@Model.ExTax</td>
                     <td>@(tags=string.Join(", ", @Model.ProductTags.Select(x => x.Tag.Name)))</td>
                     <td> @(colors=string.Join(", ", @Model.ProductColorSizes.Select(x => x.Color?.Name)))</td>
                     <td>@(Model.ProductColorSizes.FirstOrDefault().Size?.Name) </td>

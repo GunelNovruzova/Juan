@@ -505,3 +505,9 @@ C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manag
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Detail.cshtml.g.cs
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Create.cshtml.g.cs
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ProductColorSizePartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Update.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ProductIndexPartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductDetailPartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketPartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketIndexPartial.cshtml.g.cs
