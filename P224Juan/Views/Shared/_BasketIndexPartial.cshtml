@@ -24,6 +24,8 @@
                                 <th class="pro-thumbnail">Thumbnail</th>
                                 <th class="pro-title">Product</th>
                                 <th class="pro-price">Price</th>
+                                <th class="pro-price">Color</th>
+                                <th class="pro-price">Size</th>
                                 <th class="pro-quantity">Quantity</th>
                                 <th class="pro-subtotal">Total</th>
                                 <th class="pro-remove">Remove</th>
@@ -32,23 +34,25 @@
                         <tbody>
                             @foreach (BasketVM basketVM in Model)
                             {
-                                <tr>
-                                    <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/@basketVM.Image" alt="Product" /></a></td>
-                                    <td class="pro-title"><a href="#">@basketVM.Name</a></td>
-                                    <td class="pro-price"><span>@basketVM.Price</span></td>
-                                    <td class="pro-quantity">
-                                    
-                                        <div class="pro-qty">
-                                            <a asp-controller="basket" asp-action="update" asp-route-id="@basketVM.ProductId" class= "basketUpdate subCount"> <span class="dec qtybtn">-</span></a>
-                                        <input type="text" data-id="@basketVM.ProductId" data-prodcount="@basketVM.Count" class="countInp" value="@basketVM.Count"> 
-                                        <a  asp-controller="basket" asp-action="update" asp-route-id="@basketVM.ProductId" class="basketUpdate addCount"> <span class="inc qtybtn">+</span></a>
-                                        </div>
-                                     
-                                   
-                                    </td>
-                                    <td class="pro-subtotal"><span>$@((basketVM.Count * basketVM.Price).ToString("0.00"))</span></td>
-                                    <td class="pro-remove"><a class="deletecard" asp-controller="Basket" asp-action="DeleteCard" asp-route-id="@basketVM.ProductId"><i class="fa fa-trash-o"></i></a></td>
-                                </tr>
+                            <tr>
+                                <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/@basketVM.Image" alt="Product" /></a></td>
+                                <td class="pro-title"><a href="#">@basketVM.Name</a></td>
+                                <td class="pro-price"><span>@basketVM.Price</span></td>
+                                <td class="pro-price"><span>@basketVM.Color</span></td>
+                                <td class="pro-price"><span>@basketVM.Size</span></td>
+                                <td class="pro-quantity">
+
+                                    <div class="pro-qty">
+                                        <a asp-controller="basket" asp-action="update" asp-route-id="@basketVM.ProductId" class="basketUpdate subCount"> <span class="dec qtybtn">-</span></a>
+                                        <input type="text" data-id="@basketVM.ProductId" data-prodcount="@basketVM.Count" class="countInp" value="@basketVM.Count">
+                                        <a asp-controller="basket" asp-action="update" asp-route-id="@basketVM.ProductId" class="basketUpdate addCount"> <span class="inc qtybtn">+</span></a>
+                                    </div>
+
+
+                                </td>
+                                <td class="pro-subtotal"><span>$@((basketVM.Count * basketVM.Price).ToString("0.00"))</span></td>
+                                <td class="pro-remove"><a class="deletecard" asp-controller="Basket" asp-action="DeleteCard" asp-route-id="@basketVM.ProductId"><i class="fa fa-trash-o"></i></a></td>
+                            </tr>
                             }
 
                         </tbody>

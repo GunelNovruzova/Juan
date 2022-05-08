@@ -48,6 +48,7 @@
 
             })
     })
+
     $(document).on("click", ".addToBasket", function (e) {
         e.preventDefault();
         let url = $(this).attr("href");
@@ -61,7 +62,11 @@
 
         let url = $("#basketform").attr("action")
         let count = $("#productcount").val();
-        url = url + "?count=" + count;
+        let selectColor = $("#selectColor").val();
+        let selectSize = $("#selectSize").val();
+        console.log(selectColor)
+        console.log(selectSize)
+        url = url + "?count=" + count +"&colorid=" + selectColor +"&sizeid=" +selectSize;
         fetch(url).then(response => {
             return response.text();
         }).then(data => {
@@ -128,5 +133,7 @@
             return response.text()
         }).then(data => $(".minicart-content-box").html(data))
     })
+
+
 
 })

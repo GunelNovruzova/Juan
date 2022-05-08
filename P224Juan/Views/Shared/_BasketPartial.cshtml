@@ -9,7 +9,7 @@
         subTotal += item.Price * item.Count;
         ecotax = (subTotal * 2) / 100;
         vat = (subTotal * 20) / 100;
-        total = subTotal - ecotax - vat;
+        total = subTotal + ecotax + vat;
     }
 }
 <div class="minicart-item-wrapper">
@@ -65,5 +65,5 @@
 
 <div class="minicart-button">
     <a asp-action="Index" asp-controller="Basket"><i class="fa fa-shopping-cart"></i> view cart</a>
-    <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+    <a href="cart.html"><i class="fa fa-share"></i>Checkout</a>
 </div>

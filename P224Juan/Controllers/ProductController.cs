@@ -39,7 +39,7 @@ namespace P224Juan.Controllers
 
             return PartialView("_ProductDetailPartial", product);
         }
-        public async Task<IActionResult> AddBasket(int? id, int count = 1)
+        public async Task<IActionResult> AddBasket(int? id, int count = 1, string colorid="",string sizeid="")
         {
             if (id == null) return BadRequest();
             Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
@@ -54,7 +54,7 @@ namespace P224Juan.Controllers
             if (cookiebasket != null)
             {
                 basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(cookiebasket);
-                if (basketVMs.Any(b => b.ProductId == id))
+                if (basketVMs.Any(b => b.ProductId == id &&(b.Color==colorid && b.Size==sizeid)))
                 {
                     basketVMs.Find(b => b.ProductId == id).Count += count;
                 }
@@ -64,6 +64,8 @@ namespace P224Juan.Controllers
                     {
                         ProductId = (int)id,
                         Count = count,
+                        Color=colorid,
+                        Size=sizeid
                        
                     });
                 }
@@ -75,7 +77,10 @@ namespace P224Juan.Controllers
                 basketVMs.Add(new BasketVM()
                 {
                     ProductId = product.Id,
-                    Count = count
+                    Count = count,
+                    Color = colorid,
+                    Size = sizeid
+
                 });
              }
             cookiebasket = JsonConvert.SerializeObject(basketVMs);
@@ -95,31 +100,31 @@ namespace P224Juan.Controllers
             return PartialView("_BasketPartial", basketVMs);
         }
 
-        public async Task<IActionResult> GetBasket()
-        {
-            string cookieBasket = HttpContext.Request.Cookies["basket"];
+        //public async Task<IActionResult> GetBasket()
+        //{
+        //    string cookieBasket = HttpContext.Request.Cookies["basket"];
 
-            List<BasketVM> basketVMs = null;
+        //    List<BasketVM> basketVMs = null;
 
-            if (cookieBasket != null)
-            {
-                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(cookieBasket);
-            }
-            else
-            {
-                basketVMs = new List<BasketVM>();
-            }
+        //    if (cookieBasket != null)
+        //    {
+        //        basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(cookieBasket);
+        //    }
+        //    else
+        //    {
+        //        basketVMs = new List<BasketVM>();
+        //    }
 
-            foreach (BasketVM basketVM in basketVMs)
-            {
-                Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.ProductId);
-                basketVM.Image = dbProduct.MainImage;
-                basketVM.Price = dbProduct.DiscountPrice > 0 ? dbProduct.DiscountPrice : dbProduct.Price;
-                basketVM.Name = dbProduct.Name;
+        //    foreach (BasketVM basketVM in basketVMs)
+        //    {
+        //        Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.ProductId);
+        //        basketVM.Image = dbProduct.MainImage;
+        //        basketVM.Price = dbProduct.DiscountPrice > 0 ? dbProduct.DiscountPrice : dbProduct.Price;
+        //        basketVM.Name = dbProduct.Name;
                
-            }
+        //    }
 
-            return PartialView("_BasketPartial", basketVMs);
-        }
+        //    return PartialView("_BasketPartial", basketVMs);
+        //}
     }
 }
