@@ -161,6 +161,10 @@ namespace P224Juan.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -209,6 +213,10 @@ namespace P224Juan.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("State")
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -217,7 +225,8 @@ namespace P224Juan.Migrations
                         .HasMaxLength(256);
 
                     b.Property<string>("ZipCode")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -431,6 +440,9 @@ namespace P224Juan.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
 
@@ -639,6 +651,12 @@ namespace P224Juan.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -657,20 +675,16 @@ namespace P224Juan.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Star")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("AppUserId");
 
-                    b.ToTable("Review");
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("P224Juan.Models.ServiceOffer", b =>
@@ -915,7 +929,7 @@ namespace P224Juan.Migrations
                         .HasForeignKey("AppUserId");
 
                     b.HasOne("P224Juan.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("Baskets")
                         .HasForeignKey("ProductId");
                 });
 
@@ -935,7 +949,7 @@ namespace P224Juan.Migrations
                         .IsRequired();
 
                     b.HasOne("P224Juan.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("OrderItems")
                         .HasForeignKey("ProductId");
                 });
 
@@ -983,9 +997,13 @@ namespace P224Juan.Migrations
 
             modelBuilder.Entity("P224Juan.Models.Review", b =>
                 {
-                    b.HasOne("P224Juan.Models.Product", "Product")
+                    b.HasOne("P224Juan.Models.AppUser", "AppUser")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("P224Juan.Models.Blog", "Blog")
+                        .WithMany("Reviews")
+                        .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

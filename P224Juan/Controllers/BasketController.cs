@@ -99,7 +99,7 @@ namespace P224Juan.Controllers
         }
       
 
-        public async Task<IActionResult> Update(int? id, int? count)
+        public async Task<IActionResult> Update(int? id, int? count,string color,string size)
         {
             if (id == null) return BadRequest();
 
@@ -115,12 +115,12 @@ namespace P224Juan.Controllers
             {
                 basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(cookieBasket);
 
-                if (!basketVMs.Any(b => b.ProductId == id))
+                if (!basketVMs.Any(b => b.ProductId == id && b.Color == color && b.Size == size))
                 {
                     return NotFound();
                 }
 
-                basketVMs.Find(b => b.ProductId == id).Count = (int)count;
+                basketVMs.Find(b => b.ProductId == id && b.Color == color && b.Size == size).Count = (int)count;
             }
             else
             {

@@ -23,7 +23,6 @@ namespace P224Juan.Models
         [StringLength(255), Required]
         public string ZipCode { get; set; }
         public OrderStatus Status { get; set; }
-
         public IEnumerable<OrderItem> OrderItems { get; set; }
     }
 }

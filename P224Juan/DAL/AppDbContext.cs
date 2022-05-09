@@ -28,6 +28,7 @@ namespace P224Juan.DAL
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
 
     }

@@ -10,8 +10,10 @@ namespace P224Juan.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Message { get; set; }
-        public int Star { get; set; }
-        public int ProductId { get; set; }
-        public Product Product { get; set; }
+      
+        public int BlogId { get; set; }
+        public Blog Blog { get; set; }
+        public string AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }

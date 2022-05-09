@@ -85,11 +85,14 @@
     $(document).on("click", ".basketUpdate", function (e) {
         e.preventDefault();
         let url = $(this).attr("href");
+        let color = $(this).parent().parent().parent().find(".color").text()
+        let size = $(this).parent().parent().parent().find(".size").text()
+
         let count = $(this).parent().find(".countInp").val();
         let id = 0;
 
         if ($(this).hasClass("subCount")) {
-            if (count != 0) {
+            if (count != 1) {
                 count--;
             }
             id = $(this).next().attr("data-id");
@@ -99,7 +102,7 @@
             id = $(this).prev().attr("data-id");
         }
 
-        url = "Basket/Update" + "?id=" + id + "&count=" + count;
+        url = "Basket/Update" + "?id=" + id + "&count=" + count + "&color=" + color + "&size=" + size;
 
 
         fetch(url).then(response => {
