@@ -22,6 +22,7 @@ namespace P224Juan.Controllers
         {
             return View();
         }
+
         public async Task<IActionResult> DetailModal(int? id)
         {
             ViewBag.Colors = await _context.Colors.ToListAsync();
@@ -126,5 +127,8 @@ namespace P224Juan.Controllers
 
         //    return PartialView("_BasketPartial", basketVMs);
         //}
+
+
+    
     }
 }

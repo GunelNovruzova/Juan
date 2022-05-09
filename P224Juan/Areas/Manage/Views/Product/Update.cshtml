@@ -65,9 +65,24 @@
                     @await Html.PartialAsync("_ProductColorSizePartial")
                 </div>
 
+                <div class="addinputbutton">
+                    <a asp-action="GetFormColoRSizeCount" class="btn btn-primary addbtn">Add</a>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>
+@section Script{
+    <partial name="_ValidationFormScriptPartial">
+        <script>
+            $(document).ready(function () {
+                $(document).on("click", ".addbtn", function (e) {
+                    e.preventDefault();
+                    fetch($(this).attr("href")).then(response => response.text()).then(data => $(".inputContaineForadd").append(data));
 
+                    //$(".inputContaineForadd").append(inputs);
+                })
+            })
+        </script>
+}

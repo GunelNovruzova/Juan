@@ -17,5 +17,8 @@ namespace P224Juan.Models
         [StringLength(255)]
         public string Country { get; set; }
         public string ZipCode { get; set; }
+
+        public IEnumerable<Basket> Baskets { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
     }
 }

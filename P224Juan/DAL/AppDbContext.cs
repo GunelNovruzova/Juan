@@ -25,6 +25,9 @@ namespace P224Juan.DAL
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
 
     }

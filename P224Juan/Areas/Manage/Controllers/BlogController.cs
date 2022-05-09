@@ -58,9 +58,9 @@ namespace P224Juan.Areas.Manage.Controllers
                     ModelState.AddModelError("ImageFile", "Secilen Seklin Novu Uygun Deyil");
                     return View();
                 }
-                if (!blog.ImageFile.CheckFileSize(100))
+                if (!blog.ImageFile.CheckFileSize(200))
                 {
-                    ModelState.AddModelError("ImageFile", "Secilen Seklin Olcusu Maksimum 30 Kb Ola Biler");
+                    ModelState.AddModelError("ImageFile", "Secilen Seklin Olcusu Maksimum 100 Kb Ola Biler");
                     return View();
                 }
                 blog.Image = blog.ImageFile.CreateFile(_env, "assets", "img", "blog");

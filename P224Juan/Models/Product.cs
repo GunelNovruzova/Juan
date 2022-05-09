@@ -27,6 +27,8 @@ namespace P224Juan.Models
         public IEnumerable<Review> Reviews { get; set; }
         public List<ProductColorSize> ProductColorSizes { get; set;}
         public IEnumerable<ProductImage> ProductImages { get; set; }
+        public IEnumerable<Basket> Baskets { get; set; }
+        public IEnumerable<OrderItem> OrderItems { get; set; }
         [NotMapped]
         public List<int> Counts { get; set; } = new List<int>();
         [NotMapped]

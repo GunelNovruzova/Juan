@@ -513,3 +513,4 @@ C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Share
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketIndexPartial.cshtml.g.cs
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Account\Profile.cshtml.g.cs
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProfileFormPartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\ProductDetail\Index.cshtml.g.cs

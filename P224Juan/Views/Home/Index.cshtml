@@ -100,7 +100,7 @@
                             {
                                 <div class="product-item mb-50">
                                     <div class="product-thumb">
-                                        <a href="product-details.html">
+                                        <a asp-controller="productdetail" asp-action="index" asp-route-id="@product.Id">
                                             <img src="~/assets/img/product/@product.MainImage" alt="">
                                         </a>
                                     </div>
@@ -187,6 +187,8 @@
                         <!-- product item start -->
                        @foreach (Product product in Model.Products)
                        {
+                           foreach (var item in product.ProductColorSizes)
+                           {
                             <div class="slide-item">
                             <div class="pro-item-small mt-30">
                                 <div class="product-thumb">
@@ -211,8 +213,8 @@
                                     </div>
                                     <div class="product-link-2">
                                         <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                        <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
-                                        <a href="#" data-toggle="modal" data-target="#quick_view">
+                                        <a asp-controller="Product" asp-action="AddBasket" asp-route-id="@product.Id" asp-route-sizeid="@item.Size.Name" asp-route-colorid="@item.Color.Name" data-toggle="tooltip" title="Add To Cart" class="addToBasket"><i class="ion-bag"></i></a>
+                                        <a class="productdetail" data-toggle="modal" data-target="#quick_view" asp-action="DetailModal" asp-controller="Product" asp-route-id="@product.Id">
                                             <span data-toggle="tooltip"
                                                   title="Quick View"><i class="ion-ios-eye-outline"></i></span>
                                         </a>
@@ -220,6 +222,7 @@
                                 </div>
                             </div>
                         </div>
+                           }
                        }
                         <!-- product item start -->
                         <!-- product item start -->

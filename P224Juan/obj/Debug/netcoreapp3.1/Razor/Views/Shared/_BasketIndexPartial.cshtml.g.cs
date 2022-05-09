@@ -54,8 +54,22 @@ using P224Juan.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "C:\Users\User\Desktop\JuanPro\P224Juan\Views\_ViewImports.cshtml"
+using P224Juan.ViewModels.Blog;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\User\Desktop\JuanPro\P224Juan\Views\_ViewImports.cshtml"
+using P224Juan.ViewModels.Shop;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ae7b3e204c20a5fa736c17ba84cc70554c112fb7", @"/Views/Shared/_BasketIndexPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"031039f11c04312ae737792757d5d83e9f171cb8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a030f10226fe57c4f930cfc450e460295b949467", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__BasketIndexPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<BasketVM>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "basket", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -185,7 +199,7 @@ WriteAttributeValue("", 1592, basketVM.Image, 1592, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("</span></td>\r\n                                <td class=\"pro-quantity\">\r\n\r\n                                    <div class=\"pro-qty\">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b3e204c20a5fa736c17ba84cc70554c112fb711358", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b3e204c20a5fa736c17ba84cc70554c112fb711714", async() => {
                 WriteLiteral(" <span class=\"dec qtybtn\">-</span>");
             }
             );
@@ -245,7 +259,7 @@ WriteAttributeValue("", 2451, basketVM.Count, 2451, 15, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b3e204c20a5fa736c17ba84cc70554c112fb715008", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b3e204c20a5fa736c17ba84cc70554c112fb715364", async() => {
                 WriteLiteral(" <span class=\"inc qtybtn\">+</span>");
             }
             );
@@ -287,7 +301,7 @@ WriteAttributeValue("", 2451, basketVM.Count, 2451, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("</span></td>\r\n                                <td class=\"pro-remove\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b3e204c20a5fa736c17ba84cc70554c112fb718082", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b3e204c20a5fa736c17ba84cc70554c112fb718438", async() => {
                 WriteLiteral("<i class=\"fa fa-trash-o\"></i>");
             }
             );
@@ -336,7 +350,7 @@ WriteAttributeValue("", 2451, basketVM.Count, 2451, 15, false);
                 <div class=""cart-update-option d-block d-md-flex justify-content-between"">
                     <div class=""apply-coupon-wrapper"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b3e204c20a5fa736c17ba84cc70554c112fb721220", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b3e204c20a5fa736c17ba84cc70554c112fb721576", async() => {
                 WriteLiteral("\r\n                            <input type=\"text\" placeholder=\"Enter Your Coupon Code\" required />\r\n                            <button class=\"btn\">Apply Coupon</button>\r\n                        ");
             }
             );

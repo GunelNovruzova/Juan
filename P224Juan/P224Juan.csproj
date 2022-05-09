@@ -13,6 +13,10 @@
     <Compile Remove="Migrations\20220504121911_UpdatedTableProductSize.Designer.cs" />
     <Compile Remove="Migrations\20220504122140_UpdatedProColorSize.cs" />
     <Compile Remove="Migrations\20220504122140_UpdatedProColorSize.Designer.cs" />
+    <Compile Remove="Migrations\20220508201519_AddedAllTable.cs" />
+    <Compile Remove="Migrations\20220508201519_AddedAllTable.Designer.cs" />
+    <Compile Remove="Migrations\20220508201559_AddedAllTable.cs" />
+    <Compile Remove="Migrations\20220508201559_AddedAllTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
