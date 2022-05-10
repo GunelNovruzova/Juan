@@ -31,14 +31,23 @@ namespace P224Juan.Controllers
             }
 
             double total = 0;
+            double price = 0;
+            double subtotal = 0;
+            double shipping = 10;
             List<Basket> baskets = await _context.Baskets.Include(b => b.Product).Where(b => b.AppUserId == appUser.Id).ToListAsync();
 
             foreach (Basket item in baskets)
             {
                 total = total + (item.Count * (item.Product.DiscountPrice > 0 ? item.Product.DiscountPrice : item.Product.Price));
+                price = item.Product.DiscountPrice > 0 ? item.Product.DiscountPrice : item.Product.Price;
+                subtotal = item.Product.Price * item.Count;
+                shipping = 10;
             }
 
             ViewBag.Total = total;
+            ViewBag.Price = price;
+            ViewBag.Subtotal = subtotal;
+            ViewBag.Shipping = shipping;
 
             OrderVM orderVM = new OrderVM
             {
@@ -47,7 +56,8 @@ namespace P224Juan.Controllers
                 Address = appUser.Address,
 
                 Country = appUser.Country,
-                ZipCode = appUser.ZipCode
+                ZipCode = appUser.ZipCode,
+                Baskets = baskets
             };
 
             return View(orderVM);

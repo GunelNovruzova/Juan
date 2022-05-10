@@ -220,17 +220,17 @@
                             <ul class="pagination-box">
                                 @if (ViewBag.PageIndex > 1)
                                 {
-                                    <li><a class="Previous" asp-action="Index" asp-route-page="@(ViewBag.PageIndex-1)"><i class="ion-ios-arrow-left"></i></a></li>
+                                    <li><a class="Previous" asp-action="Index" asp-controller="shop" asp-route-page="@(ViewBag.PageIndex-1)"><i class="ion-ios-arrow-left"></i></a></li>
                                    
-                                    <li><a asp-action="Index" asp-route-page="@(ViewBag.PageIndex-1)">@(ViewBag.PageIndex-1)</a></li>
+                                    <li><a asp-action="Index" asp-controller="shop" asp-route-page="@(ViewBag.PageIndex-1)">@(ViewBag.PageIndex-1)</a></li>
                                 }
                                 <li class="active"><a asp-action="index" asp-route-page="@ViewBag.PageIndex">@ViewBag.PageIndex</a></li>
 
                                 @if (ViewBag.PageIndex < ViewBag.PageCount)
                                 {
-                                    <li><a asp-action="Index" asp-route-page="@(ViewBag.PageIndex+1)">@(ViewBag.PageIndex+1)</a></li>
+                                    <li><a asp-action="Index" asp-controller="shop" asp-route-page="@(ViewBag.PageIndex+1)">@(ViewBag.PageIndex+1)</a></li>
                                    
-                                    <li><a class="Next" asp-action="index" asp-route-page="@(ViewBag.PageIndex + 1)"><i class="ion-ios-arrow-right"></i></a></li>
+                                    <li><a class="Next" asp-action="index" asp-controller="shop" asp-route-page="@(ViewBag.PageIndex + 1)"><i class="ion-ios-arrow-right"></i></a></li>
                                 }
 
                             </ul>

@@ -22,7 +22,20 @@ namespace P224Juan.Controllers
         {
             return View();
         }
-
+        public async Task<IActionResult> Search(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return RedirectToAction("Index", "Product");
+            }
+            List<Product> products = await _context.Products.Where(p => p.Name.ToLower().Contains(query.ToLower())).ToListAsync();
+            return View(products);
+        }
+        public async Task<IActionResult> SearchPartial(string query)
+        {
+            List<Product> products = await _context.Products.Where(p => p.Name.ToLower().Contains(query.ToLower())).ToListAsync();
+            return PartialView("_ProductSearchPartial", products);
+        }
         public async Task<IActionResult> DetailModal(int? id)
         {
             ViewBag.Colors = await _context.Colors.ToListAsync();
