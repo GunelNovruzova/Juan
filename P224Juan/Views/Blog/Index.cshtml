@@ -116,7 +116,7 @@
                                 <!-- blog single item start -->
                                 <div class="blog-post-item mb-30">
                                     <div class="blog-thumb">
-                                        <a href="blog-details.html">
+                                        <a asp-controller="blogdetail" asp-action="index" asp-route-id="@blog.Id">
                                             <img src="~/assets/img/blog/@blog.Image" alt="blog thumb">
                                         </a>
                                     </div>
@@ -130,7 +130,7 @@
                                             <li><span>By: </span>@blog.PublisherName</li>
                                             <li><span>On: </span>@blog.CreatedAt?.ToString("MM dd, yyyy")</li>
                                         </ul>
-                                        <a href="blog-details.html" class="read-more">Read More...</a>
+                                        <a asp-controller="blogdetail" asp-action="index" class="read-more">Read More...</a>
                                     </div>
                                 </div>
                                 <!-- blog single item start -->

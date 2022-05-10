@@ -514,3 +514,9 @@ C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Share
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Account\Profile.cshtml.g.cs
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProfileFormPartial.cshtml.g.cs
 C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\ProductDetail\Index.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Order\Create.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_OrderPartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductSearchPartial.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\Product\Search.cshtml.g.cs
+C:\Users\User\Desktop\JuanPro\P224Juan\obj\Debug\netcoreapp3.1\Razor\Views\BlogDetail\Index.cshtml.g.cs

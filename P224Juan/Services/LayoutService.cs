@@ -46,5 +46,10 @@ namespace P224Juan.Services
 
             return basketVMs;
         }
+
+        public async Task<Setting> GetSetting()
+        {
+            return await _context.Settings.FirstOrDefaultAsync();
+        }
     }
 }

@@ -2,6 +2,7 @@
     @inject UserManager<AppUser> userManager;
 @inject LayoutService layoutService
 @{
+    Setting setting = await layoutService.GetSetting();
     AppUser appUser = null;
     if (User.Identity.IsAuthenticated)
     {
@@ -48,7 +49,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="welcome-message">
-                                <p>Welcome to Juan online store</p>
+                                <p>@setting.Greeting</p>
                             </div>
                         </div>
                         <div class="col-lg-6 text-right">
@@ -85,7 +86,7 @@
                         <div class="col-lg-2">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="~/assets/img/logo/logo.png" alt="">
+                                    <img src="~/assets/img/logo/@setting.Logo" alt="">
                                 </a>
                             </div>
                         </div>
@@ -146,15 +147,18 @@
                             <div class="header-configure-wrapper">
                                 <div class="header-configure-area">
                                     <ul class="nav justify-content-end">
+                                 
+                                          
                                         <li>
                                             <a href="#" class="offcanvas-btn">
                                                 <i class="ion-ios-search-strong"></i>
                                             </a>
                                         </li>
+
                                         <li class="user-hover">
                                             <a href="#">
                                                 <i class="ion-ios-gear-outline"></i>
-                                            </a>
+                                            </a> 
                                             <ul class="dropdown-list">
                                                 @if (User.Identity.IsAuthenticated)
                                                 {
@@ -165,7 +169,7 @@
                                                 {
                                                     <li><a asp-action="Login" asp-controller="Account">login</a></li>
                                                     <li><a asp-action="Register" asp-controller="Account">register</a></li>
-                                                   
+
                                                 }
 
                                             </ul>
@@ -231,9 +235,9 @@
                             <h5 class="widget-title">My Account</h5>
                             <div class="widget-body">
                                 <ul class="location-wrap">
-                                    <li><i class="ion-ios-location-outline"></i>184 Main Rd E, St Albans VIC 3021, Australia</li>
-                                    <li><i class="ion-ios-email-outline"></i>Mail Us: <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></li>
-                                    <li><i class="ion-ios-telephone-outline"></i>Phone: <a href="%2b0025425456554">+ 00 254 254565</a></li>
+                                    <li><i class="ion-ios-location-outline"></i>@setting.Address</li>
+                                    <li><i class="ion-ios-email-outline"></i>Mail Us: <a href="mailto:yourmail@gmail.com">@setting.Email</a></li>
+                                    <li><i class="ion-ios-telephone-outline"></i>Phone: <a href="%2b0025425456554">@setting.Phone</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -325,9 +329,10 @@
             </div>
             <div class="container">
                 <div class="offcanvas-search-box">
-                    <form class="d-flex bdr-bottom w-100">
-                        <input type="text" placeholder="Search entire storage here...">
-                        <button class="search-btn"><i class="ion-ios-search-strong"></i>search</button>
+                    <form method="get" asp-controller="Product" asp-action="Search" class="d-flex bdr-bottom w-100">
+                        <input type="text" name="query" placeholder="Search entire storage here...">
+                        <button type="submit" class="search-btn" id="prod-search-list-link">
+                        <i class="ion-ios-search-strong"></i>search</button>
                     </form>
                 </div>
             </div>

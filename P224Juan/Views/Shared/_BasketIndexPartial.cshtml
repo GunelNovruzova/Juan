@@ -4,12 +4,16 @@
     double ecotax = 0;
     double total = 0;
     double vat = 0;
+    double shipping = 0;
     foreach (BasketVM item in Model)
     {
         subTotal += item.Price * item.Count;
         ecotax = (subTotal * 2) / 100;
         vat = (subTotal * 20) / 100;
-        total = subTotal - ecotax - vat;
+        shipping = (subTotal * 10) / 100;
+        total = subTotal + ecotax + vat + shipping;
+
+
     }
 }
 <div class="container">
@@ -82,20 +86,20 @@
                             <table class="table">
                                 <tr>
                                     <td>Sub Total</td>
-                                    <td>$230</td>
+                                    <td>$@subTotal</td>
                                 </tr>
                                 <tr>
                                     <td>Shipping</td>
-                                    <td>$70</td>
+                                    <td>$@shipping</td>
                                 </tr>
                                 <tr class="total">
                                     <td>Total</td>
-                                    <td class="total-amount">$300</td>
+                                    <td class="total-amount">$@total</td>
                                 </tr>
                             </table>
                         </div>
                     </div>
-                    <a href="checkout.html" class="btn d-block">Proceed Checkout</a>
+                    <a asp-controller="Order" asp-action="Create" class="btn d-block">Proceed Checkout</a>
                 </div>
             </div>
         </div>

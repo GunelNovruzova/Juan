@@ -23,7 +23,7 @@ namespace P224Juan.Controllers
                 .Include(p=>p.ProductColorSizes).ThenInclude(p=>p.Color)
                 .Include(p => p.ProductColorSizes).ThenInclude(p => p.Size)
                 .Include(p=>p.ProductImages)
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync(product=>product.Id==id);
             if (product == null) return NotFound();
 
             return View(product);
