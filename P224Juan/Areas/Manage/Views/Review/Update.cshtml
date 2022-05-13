@@ -1,0 +1,22 @@
+﻿@model Review
+
+<div class="page-wrapper">
+    <form method="post" asp-action="Update" asp-controller="review" asp-area="manage" asp-route-id="@Model.Id">
+        <div class="comment-post-box">
+            <div class="row" style="flex-direction: column; justify-content: center; align-items: center; text-align: center;padding:20px;">
+
+                <div class="form-group">
+                    <label asp-for="Message"></label>
+                    <input asp-for="Message" class="form-control" placeholder="Message">
+                    <span asp-validation-for="Message"></span>
+                </div>
+               
+                <div class="col-6">
+                    <div class="coment-btn">
+                        <button class="btn" name="submit">Update Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

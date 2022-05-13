@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<Review>
+@{
+    int count = (ViewBag.PageIndex - 1) * 5;
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Blog Title</th>
+            <th scope="col">Message</th>
+            <th scope="col">Setting</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Review review in Model)
+        {
+            count++;
+        <tr>
+            <th scope="row">@count</th>
+            <td>@review.Name</td>
+            <td>@review.CreatedAt</td>
+            <td>@review.Blog.Title</td>
+            <td>@review.Message</td>
+
+            <td style="color:@(review.IsDeleted ? "red":"green")">@(review.IsDeleted ? "DeActive":"Active")</td>
+            <td>
+
+                <a class="btn btn-warning" asp-action="Detail" asp-route-status="@ViewBag.Status" asp-route-isMainRoute="@ViewBag.IsMain" asp-route-page="@ViewBag.PageIndex" asp-route-id="@review.Id">Detail</a>
+                <a class="btn btn-warning" asp-action="Update" asp-route-status="@ViewBag.Status" asp-route-isMainRoute="@ViewBag.IsMain" asp-route-page="@ViewBag.PageIndex" asp-route-id="@review.Id">Update</a>
+                <a id="@(review.IsDeleted ? "restoreTag":"deleteTag")" class="btn @(review.IsDeleted ? "btn-primary":"btn-danger")" asp-route-status="@ViewBag.Status" asp-route-isMainRoute="@ViewBag.IsMain" asp-route-page="@ViewBag.PageIndex" asp-action="@(review.IsDeleted ? "Restore":"Delete")" asp-route-id="@review.Id">@(review.IsDeleted ? "Restore":"Delete")</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

@@ -22,6 +22,6 @@ namespace P224Juan.ViewModels.Order
         public string State { get; set; }
         [StringLength(255), Required]
         public string ZipCode { get; set; }
-        public IEnumerable<P224Juan.Models.Basket> Baskets { get; set; }
+        //public IEnumerable<P224Juan.Models.Basket> Baskets { get; set; }
     }
 }

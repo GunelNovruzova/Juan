@@ -1,0 +1,287 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<main>
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area bg-img" data-bg="assets/img/banner/breadcrumb-banner.jpg" style="background-image: url(&quot;assets/img/banner/breadcrumb-banner.jpg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap text-center">
+                        <nav aria-label="breadcrumb">
+                            <h1 class="breadcrumb-title">Blog</h1>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="blog-right-sidebar.html">Blog</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+    <!-- blog main wrapper start -->
+    <div class="blog-main-wrapper section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 order-2">
+                    <div class="blog-widget-wrapper">
+                        <!-- widget item start -->
+                        <div class="blog-widget">
+                            <div class="blog-widget-img">
+                                <img src="/assets/img/blog/11.jpg" alt="author thumb">
+                            </div>
+                            <div class="blog-author-title text-center">
+                                <h5>Erik Jhonson</h5>
+                                <span>UI UX Designer</span>
+                                <div class="blog-widget-icon">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-vimeo"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- widget item end -->
+                        <!-- widget item start -->
+                        <div class="blog-widget">
+                            <h4 class="blog-widget-title">Search</h4>
+                            <form class="widget-search-form">
+                                <input placeholder="Search keyword" type="text" class="search-field">
+                                <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                        <!-- widget item end -->
+                        <!-- widget item start -->
+                        <div class="blog-widget">
+                            <h4 class="blog-widget-title">Recent Posts</h4>
+                            <ul class="recent-posts-inner">
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/90a4e690-3ac5-46ed-836a-81f7a624f1ef_202205040331547493_blog-1.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/fe300699-6562-4f09-b101-112bf47b8413_202205040342327008_blog-2.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/20e3f8d8-a7a4-40f4-a072-1bf2d9960101_202205040344049126_blog-3.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/3c7c31ce-ed2a-4f6a-a22c-9f5396f0a81a_202205080107485235_recent-02.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Lorem ipsum dolor</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/9b24b036-100f-4a8a-a2c1-48a2d64add31_202205081132021035_blog-details-2.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Bigger ipsum dolor sit amet consectetur adipisicing elit. Voluptate perferendis consequuntur illo aliquid nihil ad neque, debitis praesentium libero ullam asperiores exercitationem deserunt inventore facilis, officiis,</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/8cd61891-f277-46ed-a190-db6ef3ca2c09_202205081132556046_blog-3.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Bigger ipsum dolor sit amet consectetur adipisicing elit. Voluptsperiores exercitationem deserunt inventore facilis, officiis,</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/aeed1f9c-1b73-41e7-a6ed-90df8f966781_202205081133314688_11.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Lorem ipsum dolor</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/eb0b8268-cee4-4aef-ad70-ecf4da2ac7f3_202205081133588800_blog-1.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Lorem ipsum dolor</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/9c566262-8787-4420-b96b-2d68035d2ac8_202205081135148608_blog-details-1.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Lorem ipsum dolor</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-details.html"><img src="/assets/img/blog/ef014eb7-d62e-46ea-8465-0411f2ed4733_202205081135488161_blog-4.jpg" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">February  13,  2018</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid</a></h6>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <!-- widget item end -->
+                        <!-- widget item start -->
+                        <div class="blog-widget">
+                            <h4 class="blog-widget-title">Categories</h4>
+                            <ul class="blog-categories">
+                                <li><a href="blog-details.html">Shoes</a><span>(20)</span></li>
+                                <li><a href="blog-details.html">Fashion</a><span>(20)</span></li>
+                                <li><a href="blog-details.html">Wallet</a><span>(20)</span></li>
+                                <li><a href="blog-details.html">Life Style</a><span>(20)</span></li>
+                                <li><a href="blog-details.html">Electronics</a><span>(20)</span></li>
+                                <li><a href="blog-details.html">Jewellery &amp; Cosmetics</a><span>(20)</span></li>
+
+                            </ul>
+                        </div>
+                        <!-- widget item end -->
+                        <!-- widget item start -->
+                        <div class="blog-widget">
+                            <h4 class="blog-widget-title">Tags</h4>
+                            <div class="blog-tag">
+                                <a href="blog-details.html">Juanaa</a>
+                                <a href="blog-details.html">Adidas</a>
+                                <a href="blog-details.html">Fashion</a>
+                                <a href="blog-details.html">Shoes</a>
+                                <a href="blog-details.html">Bags</a>
+                                <a href="blog-details.html">Wallet</a>
+                                <a href="blog-details.html">Jewellery</a>
+
+                            </div>
+                        </div>
+                        <!-- widget item end -->
+                    </div>
+                </div>
+                <div class="col-lg-9 order-1">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- blog single item start -->
+                            <div class="blog-post-item">
+                                <div class="blog-thumb">
+                                    <img src="/assets/img/blog/@Model.Image" alt="blog thumb">
+                                </div>
+                                <div class="blog-content blog-details">
+                                    <h5 class="blog-title">
+                                        @Model.Title
+                                    </h5>
+                                    <ul class="blog-meta">
+                                        <li><span>By: </span>@Model.PublisherName,</li>
+                                        <li><span>On: </span>@Model.CreatedAt</li>
+                                    </ul>
+                                    <p>
+                                        @Model.Description.ToString().Substring(0,70)
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur.
+                                            venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed,
+                                            cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin
+                                            dictum
+                                            tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque
+                                            scelerisque.
+                                        </p>
+                                    </blockquote>
+                                    <p>
+
+                                        @Model.Description.ToString().Substring(70)
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- blog single item start -->
+                            <!-- comment area start -->
+                            <div class="comment-section section-padding">
+                                <h5>03 Comment</h5>
+                                <ul>
+                                    @foreach (Review review in Model.Reviews)
+                                    {
+
+
+<li>
+                                            <div class="author-avatar">
+                                                <img src="/assets/img/blog/comment-icon.png" alt="">
+                                            </div>
+                                            <div class="comment-body">
+                                                <span class="reply-btn"><a href="#">Reply</a></span>
+                                                @if (User.Identity.IsAuthenticated && review.Name== User.Identity.Name)
+                                                {
+                                                    <span class="reply-btn"><a href="#">Change</a></span>
+                                                }
+                                                <h5 class="comment-author">@review.Name</h5>
+                                                <div class="comment-post-date">
+                                                    @review.CreatedAt
+                                                </div>
+                                                <p>
+                                                    @review.Message
+                                                </p>
+                                            </div>
+                                        </li>
+
+                                    }
+
+                                </ul>
+                            </div>
+                            <!-- comment area end -->
+                            <!-- start blog comment box -->
+                            <div class="blog-comment-wrapper">
+                                <h5>Leave A Reply</h5>
+                                <p>Email address will not be published. Required fields are marked *</p>
+                                <form  method="post" enctype="multipart/form-data" asp-route-bid="@Model.Id" asp-controller="blog" asp-action="AddReview">
+                                    <div class="comment-post-box">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label>Comment</label>
+                                                <textarea id="Message" name="Message" placeholder="Write a comment"></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="coment-btn">
+                                                    <button class="btn"  name="submit" value="POST COMMENT"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- start blog comment box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- blog main wrapper end -->
+</main>
+

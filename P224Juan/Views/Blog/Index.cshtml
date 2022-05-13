@@ -66,7 +66,7 @@
                                 {
                                     <li class="recent-posts">
                                         <div class="recent-posts-image">
-                                            <a href="blog-details.html"><img src="~/assets/img/blog/@blog.Image" alt="post thumb"></a>
+                                            <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id"><img src="~/assets/img/blog/@blog.Image" alt="post thumb"></a>
                                         </div>
                                         <div class="recent-posts-body">
                                             <span class="recent-posts-meta">@blog.CreatedAt?.ToString("MMMM dd, yyy")</span>
@@ -116,7 +116,7 @@
                                 <!-- blog single item start -->
                                 <div class="blog-post-item mb-30">
                                     <div class="blog-thumb">
-                                        <a asp-controller="blogdetail" asp-action="index" asp-route-id="@blog.Id">
+                                        <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id">
                                             <img src="~/assets/img/blog/@blog.Image" alt="blog thumb">
                                         </a>
                                     </div>
@@ -130,7 +130,7 @@
                                             <li><span>By: </span>@blog.PublisherName</li>
                                             <li><span>On: </span>@blog.CreatedAt?.ToString("MM dd, yyyy")</li>
                                         </ul>
-                                        <a asp-controller="blogdetail" asp-action="index" class="read-more">Read More...</a>
+                                        <a  class="read-more">Read More...</a>
                                     </div>
                                 </div>
                                 <!-- blog single item start -->

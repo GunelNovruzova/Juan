@@ -8,5 +8,6 @@ namespace P224Juan.ViewModels.Account
     public class MemberProfileVM
     {
         public MemberUpdateVM Member { get; set; }
+        public List<P224Juan.Models.Order> Orders { get; set; }
     }
 }

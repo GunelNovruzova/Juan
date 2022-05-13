@@ -17,6 +17,7 @@ namespace P224Juan.Models
         [StringLength(2000)]
         public string Description { get; set; }
         public string PublisherName { get; set; }
+        public IEnumerable<Review> Reviews { get; set; }
 
         [NotMapped]
         public IFormFile ImageFile { get; set; }
